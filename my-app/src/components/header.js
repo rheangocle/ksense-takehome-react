@@ -1,16 +1,14 @@
 import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
 
-function BasicExample() {
+function Header() {
   return (
-    <Navbar bg='info' expand='lg' className='justify-content-center'>
-      <Container>
-        <Navbar.Brand href='#home'>Users & Posts</Navbar.Brand>
+    <Navbar bg='info' expand='lg' className='d-flex justify-items-center'>
+      <Container className='justify-content-center'>
+        <h1>User Information</h1>
       </Container>
     </Navbar>
   );
 }
 
-export default BasicExample;
+export default Header;

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Button, Table, Card, Nav, NavLink } from "react-bootstrap";
+import { Table, Card, Nav } from "react-bootstrap";
 import axios from "axios";
 
-export default function UsersTable() {
+export default function UsersData() {
   // Variables for getting user data
   const [users, setUsers] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -13,6 +13,7 @@ export default function UsersTable() {
   const [isLoading, setIsLoading] = useState(true);
   const [err, setErr] = useState(null);
 
+  // fetching user data from api
   const getUsers = async () => {
     try {
       const response = await axios(
@@ -27,6 +28,7 @@ export default function UsersTable() {
     }
   };
 
+  // fetching post data from api
   const getPosts = async (userId) => {
     try {
       const posts = await axios(
@@ -72,18 +74,27 @@ export default function UsersTable() {
           })}
         </tbody>
       </Table>
+      <div className='d-flex justify-content-center'>
+        <h5>User's Posts</h5>
+      </div>
 
-      {posts &&
-        posts.data.map((post) => (
-          <>
-            <Card key={post.id}>
-              <Card.Header as='h5'>{post.title}</Card.Header>
+      {/* Looping through user's post from fetch api */}
+      <div className='container d-flex flex-wrap p-2 justify-content-evenly'>
+        {posts ? (
+          posts.data.map((post) => (
+            <Card className='mb-5' style={{ width: "18rem" }} key={post.id}>
+              <Card.Header as='h5' className='bg-secondary'>
+                {post.title}
+              </Card.Header>
               <Card.Body>
                 <Card.Text>{post.body}</Card.Text>
               </Card.Body>
             </Card>
-          </>
-        ))}
+          ))
+        ) : (
+          <p>This user does not have any posts.</p>
+        )}
+      </div>
     </>
   );
 }
