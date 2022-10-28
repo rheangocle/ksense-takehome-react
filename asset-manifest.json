@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ksense-takehome-react/static/css/main.85768c17.css",
+    "main.js": "/ksense-takehome-react/static/js/main.130ed711.js",
+    "static/js/787.28cb0dcd.chunk.js": "/ksense-takehome-react/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/ksense-takehome-react/index.html",
+    "main.85768c17.css.map": "/ksense-takehome-react/static/css/main.85768c17.css.map",
+    "main.130ed711.js.map": "/ksense-takehome-react/static/js/main.130ed711.js.map",
+    "787.28cb0dcd.chunk.js.map": "/ksense-takehome-react/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.85768c17.css",
+    "static/js/main.130ed711.js"
+  ]
+}
